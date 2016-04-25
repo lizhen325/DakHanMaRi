@@ -1,19 +1,17 @@
 ﻿/// <reference path="../Venders/angular.js" />
-angular.module('DakHanMaRi', ['ngRoute'])
-        .config(function ($routeProvider, $locationProvider) {
+(function () {
+    'user strict';
+    angular.module('DakHanMaRi', ['ngRoute'])
+        .config(function ($routeProvider) {
             $routeProvider
-                .when('/index', {
-                    templateUrl:'/Home/Index'
+                .when('/Home', {
+                    templateUrl: '/Home/Index'
                 })
                 .when('/Employee', {
                     templateUrl: '/Employee/Index'
                 })
-                .when('/Login', {
-                    templateUrl: '/Login/Index',
-                    controller:'LoginController'
+                .otherwise({
+                    redirectTo: '/'
                 })
-                .when('/Home', {
-                    templateUrl: '/Home/Index'
-                })
-            $locationProvider.html5Mode({ enabled: true, requireBase: false });
-        });
+        })
+})();

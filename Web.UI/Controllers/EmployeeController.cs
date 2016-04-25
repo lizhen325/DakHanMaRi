@@ -18,7 +18,14 @@ namespace Web.UI.Controllers
         // GET: Employee
         public ViewResult Index()
         {
-            return View("Index",_employeeRepository.GetAllEmployees());
+            return View();
+        }
+
+        // GET: Employee
+        public JsonResult GetEmployeesByDelflag()
+        {
+            var employee = _employeeRepository.GetAllEmployees();
+            return Json(employee, JsonRequestBehavior.AllowGet);
         }
     }
 }

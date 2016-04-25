@@ -1,6 +1,4 @@
-﻿@model IEnumerable<Web.UI.Models.Employee>
-
-@{
+﻿@{
     Layout = null;
 }
 
@@ -11,61 +9,32 @@
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
 </head>
-<body>
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Phone)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Birthday)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.JoinAt)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SalaryPerHour)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TotalHourPerWeek)
-            </th>
-            <th></th>
-        </tr>
-    
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Phone)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Birthday)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.JoinAt)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SalaryPerHour)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TotalHourPerWeek)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-            </td>
-        </tr>
-    }
-    
-    </table>
+<body  ng-app="DakHanMaRi">
+    <div ng-controller="EmployeeController">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>BirthDay</th>
+                    <th>JoinTime</th>
+                    <th>SalaryPerHour</th>
+                    <th>TotalHourPerWeek</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employee in employees">
+                    <td>{{employee.Name}}</td>
+                    <td>{{employee.Phone}}</td>
+                    <td>{{employee.Birthday}}</td>
+                    <td>{{employee.JoinAt}}</td>
+                    <td>{{employee.SalaryPerHour}}</td>
+                    <td>{{employee.TotalHourPerWeek}}</td>
+                    <td><button class="btn btn-info">Edit</button></td>
+                    <td><button class="btn btn-info">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
