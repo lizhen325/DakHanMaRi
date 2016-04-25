@@ -175,35 +175,42 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Home.css" />
+    <Content Include="Content\Images\Background.jpg" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="scripts\ai.0.15.0-build58334.js" />
-    <Content Include="scripts\ai.0.15.0-build58334.min.js" />
-    <Content Include="scripts\bootstrap.js" />
-    <Content Include="scripts\bootstrap.min.js" />
-    <None Include="scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="scripts\jquery-1.10.2.js" />
-    <Content Include="scripts\jquery-1.10.2.min.js" />
-    <None Include="scripts\jquery.validate-vsdoc.js" />
-    <Content Include="scripts\jquery.validate.js" />
-    <Content Include="scripts\jquery.validate.min.js" />
-    <Content Include="scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="scripts\modernizr-2.6.2.js" />
+    <Content Include="scripts\Controllers\LoginController.js" />
+    <Content Include="scripts\Router\route-config.js" />
+    <Content Include="scripts\Venders\angular-cookies.js" />
+    <Content Include="scripts\Venders\angular-resource.js" />
+    <Content Include="scripts\Venders\angular-route.js" />
+    <Content Include="scripts\Venders\angular.js" />
+    <Content Include="scripts\Venders\bootstrap.js" />
+    <Content Include="scripts\Venders\bootstrap.min.js" />
+    <None Include="scripts\Venders\jquery.validate-vsdoc.js" />
+    <Content Include="scripts\Venders\jquery.validate.js" />
+    <Content Include="scripts\Venders\jquery.validate.min.js" />
+    <Content Include="scripts\Venders\jquery.validate.unobtrusive.js" />
+    <Content Include="scripts\Venders\jquery.validate.unobtrusive.min.js" />
+    <Content Include="scripts\Venders\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
     <Content Include="Views\Employee\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="API\PracticeController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\IAdminProfileRepository.cs" />
     <Compile Include="Interfaces\IEmployeeRepository.cs" />
     <Compile Include="Migrations\201604201117052_Initial.cs" />
     <Compile Include="Migrations\201604201117052_Initial.Designer.cs">
@@ -217,10 +224,20 @@
     <Compile Include="Migrations\201604201510280_DeleteProfileTable.Designer.cs">
       <DependentUpon>201604201510280_DeleteProfileTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201604241632570_AdminProfilesTable.cs" />
+    <Compile Include="Migrations\201604241632570_AdminProfilesTable.Designer.cs">
+      <DependentUpon>201604241632570_AdminProfilesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604241634364_AlterAdminProfilesTable.cs" />
+    <Compile Include="Migrations\201604241634364_AlterAdminProfilesTable.Designer.cs">
+      <DependentUpon>201604241634364_AlterAdminProfilesTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AdminProfile.cs" />
     <Compile Include="Models\CMSDBContext.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reposotires\AdminRepository.cs" />
     <Compile Include="Reposotires\EmployeeRepository.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -235,7 +252,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -245,6 +262,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201604201117052_Initial.resx">
@@ -255,6 +273,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604201510280_DeleteProfileTable.resx">
       <DependentUpon>201604201510280_DeleteProfileTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604241632570_AdminProfilesTable.resx">
+      <DependentUpon>201604241632570_AdminProfilesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604241634364_AlterAdminProfilesTable.resx">
+      <DependentUpon>201604241634364_AlterAdminProfilesTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -64,6 +64,7 @@ namespace Web.UI.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Bind<IEmployeeRepository>().To<EmployeeRepository>();
+            kernel.Bind<IAdminProfileRepository>().To<AdminRepository>();
         }        
     }
 }

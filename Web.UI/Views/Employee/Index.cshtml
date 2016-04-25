@@ -8,6 +8,10 @@
 
 <p>
     @Html.ActionLink("Create New", "Create")
+    @if(Session["user"] != null)
+    {
+        <p>Hellow @Session["user"]</p>
+    }
 </p>
 <table class="table">
     <tr>

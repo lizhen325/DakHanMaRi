@@ -7,7 +7,7 @@ using Web.UI.Interfaces;
 
 namespace Web.UI.Controllers
 {
-    public class EmployeeController : Controller
+    public class EmployeeController : BaseController
     {
         IEmployeeRepository _employeeRepository;
 
