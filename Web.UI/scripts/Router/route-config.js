@@ -1,13 +1,19 @@
 ﻿/// <reference path="../Venders/angular.js" />
-/// <reference path="D:\Asp.Net\DAKHANMARI\Web.UI\Views/Employee/Index.cshtml" />
-'user strict'
-angular.module('DakHanMaRi')
-        .config(function ($routeProvider) {
+angular.module('DakHanMaRi', ['ngRoute'])
+        .config(function ($routeProvider, $locationProvider) {
             $routeProvider
-                .when('/Employee', {
-                    templateUrl: 'Views/Employee/Index.cshtml'
+                .when('/index', {
+                    templateUrl:'/Home/Index'
                 })
-                .when('/Login/Index', {
-                    templateUrl: 'Views/Login/Index.cshtml',
-                });
-        })
+                .when('/Employee', {
+                    templateUrl: '/Employee/Index'
+                })
+                .when('/Login', {
+                    templateUrl: '/Login/Index',
+                    controller:'LoginController'
+                })
+                .when('/Home', {
+                    templateUrl: '/Home/Index'
+                })
+            $locationProvider.html5Mode({ enabled: true, requireBase: false });
+        });

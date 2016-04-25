@@ -1,23 +1,17 @@
-﻿body {
-    margin: 0;
-    padding: 0;
-    background-image: url('Images/Background.jpg');
+﻿/* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+.row.content {
+    height: 500px;
 }
 
-.login-form{
-    width:400px;
-    height:200px;
-    position:absolute;
-    left:50%;
-    top:50%;
-    margin-left:-200px;
-    margin-top:-100px;
+/* Set gray background color and 100% height */
+.sidenav {
+    background-color: #f1f1f1;
+    height: 100%;
 }
 
-input.ng-invalid.ng-touched {
-    border:1px solid red;
-}
-
-.help-block{
-    color:red;
+/* Set black background color, white text and some padding */
+footer {
+    background-color: #555;
+    color: white;
+    padding: 15px;
 }
