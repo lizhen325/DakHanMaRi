@@ -19,7 +19,7 @@ namespace Web.UI.Reposotires
 
         public IQueryable<Employee> GetAllEmployees()
         {
-            return db.Employees;
+            return db.Employees.Where(e => e.DelFlag == 0);
         }
 
         protected override void Dispose(bool disposing)

@@ -35,9 +35,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.TotalHourPerWeek)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LeaveAt)
-            </th>
             <th></th>
         </tr>
     
@@ -60,9 +57,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.TotalHourPerWeek)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LeaveAt)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
