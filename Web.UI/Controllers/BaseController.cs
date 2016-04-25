@@ -10,7 +10,7 @@ namespace Web.UI.Controllers
             base.OnActionExecuted(filterContext);
             if(Session["user"] == null)
             {
-                filterContext.HttpContext.Response.Redirect("/Home/Index");
+                filterContext.HttpContext.Response.Redirect("/Login/Index");
                 return;
             }
         }

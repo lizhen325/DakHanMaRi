@@ -206,7 +206,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -223,14 +223,6 @@
     <Compile Include="Migrations\201604201510280_DeleteProfileTable.cs" />
     <Compile Include="Migrations\201604201510280_DeleteProfileTable.Designer.cs">
       <DependentUpon>201604201510280_DeleteProfileTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201604241632570_AdminProfilesTable.cs" />
-    <Compile Include="Migrations\201604241632570_AdminProfilesTable.Designer.cs">
-      <DependentUpon>201604241632570_AdminProfilesTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201604241634364_AlterAdminProfilesTable.cs" />
-    <Compile Include="Migrations\201604241634364_AlterAdminProfilesTable.Designer.cs">
-      <DependentUpon>201604241634364_AlterAdminProfilesTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AdminProfile.cs" />
@@ -252,7 +244,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -262,7 +254,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201604201117052_Initial.resx">
@@ -273,12 +264,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604201510280_DeleteProfileTable.resx">
       <DependentUpon>201604201510280_DeleteProfileTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604241632570_AdminProfilesTable.resx">
-      <DependentUpon>201604241632570_AdminProfilesTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604241634364_AlterAdminProfilesTable.resx">
-      <DependentUpon>201604241634364_AlterAdminProfilesTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

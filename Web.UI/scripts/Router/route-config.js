@@ -7,7 +7,7 @@ angular.module('DakHanMaRi')
                 .when('/Employee', {
                     templateUrl: 'Views/Employee/Index.cshtml'
                 })
-                .when('/Home/Index', {
-                    templateUrl: 'Views/Home/Index.cshtml',
+                .when('/Login/Index', {
+                    templateUrl: 'Views/Login/Index.cshtml',
                 });
         })

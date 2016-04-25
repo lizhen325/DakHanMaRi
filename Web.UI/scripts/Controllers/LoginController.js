@@ -2,7 +2,7 @@
 loginApp.controller('LoginController', function ($scope, $http) {
     $scope.login = function () {
         $http({
-            url: '/Home/GetAdminProfileByUserId',
+            url: '/Login/GetAdminProfileByUserId',
             method: 'POST',
             params: { userId: $scope.userId }
         }).then(function (response) {
