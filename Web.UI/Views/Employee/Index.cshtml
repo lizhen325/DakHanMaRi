@@ -11,7 +11,11 @@
 </head>
 <body  ng-app="DakHanMaRi">
     <div ng-controller="EmployeeController">
-        <table>
+        <div style="padding:10px;">
+            Search By Name <input type="search" ng-model="searchName" />
+            <button class="btn btn-primary" style="float:right;">Add Employee</button>
+        </div>
+        <table class="table table-hover">
             <thead>
                 <tr>
                     <th>Name</th>
@@ -20,18 +24,20 @@
                     <th>JoinTime</th>
                     <th>SalaryPerHour</th>
                     <th>TotalHourPerWeek</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="employee in employees">
+                <tr ng-repeat="employee in employees | filter:searchName">
                     <td>{{employee.Name}}</td>
                     <td>{{employee.Phone}}</td>
                     <td>{{employee.Birthday | formatDateTime}}</td>
                     <td>{{employee.JoinAt | formatDateTime}}</td>
-                    <td>{{employee.SalaryPerHour}}</td>
+                    <td>{{employee.SalaryPerHour | currency}}</td>
                     <td>{{employee.TotalHourPerWeek}}</td>
-                    <td><button class="btn btn-info">Edit</button></td>
-                    <td><button class="btn btn-info">Delete</button></td>
+                    <td><button class="btn btn-primary">Edit</button></td>
+                    <td><button class="btn btn-primary">Delete</button></td>
                 </tr>
             </tbody>
         </table>
