@@ -25,7 +25,7 @@ namespace Web.UI.Controllers
         // GET: Employee
         public JsonResult GetEmployeesByDelflag()
         {
-            var employee = _employeeRepository.GetAllEmployees();
+            var employee = _employeeRepository.GetEmployeesByDelflag();
             return Json(employee, JsonRequestBehavior.AllowGet);
         }
 

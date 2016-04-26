@@ -34,7 +34,7 @@ namespace Web.UI.Reposotires
             }
         }
 
-        public IQueryable<Employee> GetAllEmployees()
+        public IQueryable<Employee> GetEmployeesByDelflag()
         {
             return db.Employees.Where(e => e.DelFlag == 0);
         }

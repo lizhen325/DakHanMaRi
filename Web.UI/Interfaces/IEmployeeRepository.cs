@@ -9,7 +9,7 @@ namespace Web.UI.Interfaces
 {
     public interface IEmployeeRepository
     {
-        IQueryable<Employee> GetAllEmployees();
+        IQueryable<Employee> GetEmployeesByDelflag();
         string AddEmployee(Employee employee);
     }
 }

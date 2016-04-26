@@ -40,9 +40,9 @@ namespace Web.UI.Tests
         [Test]
         public void Test_Count_List_Of_Employees()
         {
-            mockEmployeeRepository.Setup(m => m.GetAllEmployees()).Returns(employee.AsQueryable);
+            mockEmployeeRepository.Setup(m => m.GetEmployeesByDelflag()).Returns(employee.AsQueryable);
             var expected = employeeController.GetEmployeesByDelflag().Data as IQueryable<Employee>;
-            Assert.AreEqual(expected.Count(), mockEmployeeRepository.Object.GetAllEmployees().Count());
+            Assert.AreEqual(expected.Count(), mockEmployeeRepository.Object.GetEmployeesByDelflag().Count());
         }
 
         [Test]
