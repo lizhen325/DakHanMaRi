@@ -1,7 +1,7 @@
 ﻿/// <reference path="../Venders/angular.js" />
 (function () {
     'user strict';
-    angular.module('DakHanMaRi', ['ngRoute'])
+    angular.module('DakHanMaRi', ['ngRoute', 'ngDialog'])
         .config(function ($routeProvider) {
             $routeProvider
                 .when('/Home', {

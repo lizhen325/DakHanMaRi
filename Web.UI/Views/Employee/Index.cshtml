@@ -8,12 +8,15 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
+    <link href="~/Content/ngDialog-theme-default.css" rel="stylesheet" />
+    <link href="~/Content/ngDialog.css" rel="stylesheet" />
+    <link href="~/Content/ngDialog.min.css" rel="stylesheet" />
 </head>
-<body  ng-app="DakHanMaRi">
+<body>
     <div ng-controller="EmployeeController">
         <div style="padding:10px;">
             Search By Name <input type="search" ng-model="searchName" />
-            <button class="btn btn-primary" style="float:right;">Add Employee</button>
+            <button class="btn btn-primary" style="float:right;" ng-click="openDialog()">Add Employee</button>
         </div>
         <table class="table table-hover">
             <thead>
