@@ -6,6 +6,7 @@ using Web.UI.Controllers;
 using Web.UI.Models;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web.Mvc;
 
 namespace Web.UI.Tests
 {
@@ -14,13 +15,20 @@ namespace Web.UI.Tests
     {
         private Mock<IEmployeeRepository> mockEmployeeRepository;
         private EmployeeController employeeController;
+        private List<Employee> employee;
 
         [SetUp]
         public void SetUpTest()
         {
+            employee = new List<Employee>(){
+                new Employee(){Id=1, Name="Lizhen" },
+                new Employee(){Id=2, Name="Jin" },
+                new Employee(){Id=3, Name="SoDam" },
+            };
             mockEmployeeRepository = new Mock<IEmployeeRepository>();
             employeeController = new EmployeeController(mockEmployeeRepository.Object);
         }
+
 
         [Test]
         public void Test_EmployeeController_ViewName_Should_Be_Equal()
@@ -30,16 +38,22 @@ namespace Web.UI.Tests
         }
 
         [Test]
-        public void Test_List_Of_Employees()
+        public void Test_Count_List_Of_Employees()
         {
-            List<Employee> mockEmployees = new List<Employee>();
-            mockEmployees.Add(new Employee() { Id = 1, Name = "Lizhen" });
-            mockEmployeeRepository.Setup(m => m.GetAllEmployees()).Returns(mockEmployees.AsQueryable);
-            var result = employeeController.Index();
-            var employees = (IQueryable<Employee>)result.ViewData.Model;
-            Assert.AreEqual(employees.Count(), mockEmployees.Count());
+            mockEmployeeRepository.Setup(m => m.GetAllEmployees()).Returns(employee.AsQueryable);
+            var expected = employeeController.GetEmployeesByDelflag().Data as IQueryable<Employee>;
+            Assert.AreEqual(expected.Count(), mockEmployeeRepository.Object.GetAllEmployees().Count());
         }
-        
+
+        [Test]
+        public void Test_Add_Employee()
+        {
+            Employee employee = new Employee() { Id = 2, Name = "Jin", DelFlag = 0, Phone = "123" };
+            mockEmployeeRepository.Setup(m => m.AddEmployee(employee)).Returns("OK");
+            var expected = employeeController.AddEmployee(employee) as ContentResult;
+            Assert.AreEqual(expected.Content, mockEmployeeRepository.Object.AddEmployee(employee));
+        }
+
         [TearDown]
         public void TearDown()
         {

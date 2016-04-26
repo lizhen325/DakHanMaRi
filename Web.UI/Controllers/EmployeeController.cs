@@ -19,7 +19,7 @@ namespace Web.UI.Controllers
         // GET: Employee
         public ViewResult Index()
         {
-            return View();
+            return View("Index");
         }
 
         // GET: Employee
