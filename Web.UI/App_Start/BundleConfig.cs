@@ -11,6 +11,15 @@ namespace Web.UI
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
+            //angular
+            bundles.Add(new ScriptBundle("~/bundles/angular").Include(
+                        "~/Scripts/Venders/angular.js",
+                        "~/Scripts/Venders/angular-route.js",
+                        "~/Scripts/Venders/ngDialog.js",
+                        "~/Scripts/Router/route-config.js",
+                        "~/Scripts/filters/Date-Filter.js",
+                        "~/Scripts/Controllers/EmployeeController.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
 
