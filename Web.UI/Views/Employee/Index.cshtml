@@ -26,8 +26,8 @@
                 <tr ng-repeat="employee in employees">
                     <td>{{employee.Name}}</td>
                     <td>{{employee.Phone}}</td>
-                    <td>{{employee.Birthday}}</td>
-                    <td>{{employee.JoinAt}}</td>
+                    <td>{{employee.Birthday | formatDateTime}}</td>
+                    <td>{{employee.JoinAt | formatDateTime}}</td>
                     <td>{{employee.SalaryPerHour}}</td>
                     <td>{{employee.TotalHourPerWeek}}</td>
                     <td><button class="btn btn-info">Edit</button></td>
