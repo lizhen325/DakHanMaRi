@@ -10,5 +10,6 @@ namespace Web.UI.Interfaces
     public interface IEmployeeRepository
     {
         IQueryable<Employee> GetAllEmployees();
+        string AddEmployee(Employee employee);
     }
 }

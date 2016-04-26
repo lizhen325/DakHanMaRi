@@ -17,6 +17,20 @@ namespace Web.UI.Reposotires
             this.db = db;
         }
 
+        public string AddEmployee(Employee employee)
+        {
+            if(employee != null)
+            {
+                db.Employees.Add(employee);
+                db.SaveChanges();
+                return "Employee record added successfully";
+            }
+            else
+            {
+                return "Invalid employee record";
+            }
+        }
+
         public IQueryable<Employee> GetAllEmployees()
         {
             return db.Employees.Where(e => e.DelFlag == 0);

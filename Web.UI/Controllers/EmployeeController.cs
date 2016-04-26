@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Web.UI.Interfaces;
+using Web.UI.Models;
 
 namespace Web.UI.Controllers
 {
@@ -26,6 +27,11 @@ namespace Web.UI.Controllers
         {
             var employee = _employeeRepository.GetAllEmployees();
             return Json(employee, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult AddEmployee(Employee employee)
+        {
+            return Content(_employeeRepository.AddEmployee(employee));
         }
     }
 }
