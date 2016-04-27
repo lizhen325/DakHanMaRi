@@ -38,5 +38,10 @@ namespace Web.UI.Controllers
         {
             return Json(_employeeRepository.GetEmployeeById(id), JsonRequestBehavior.AllowGet);
         }
+
+        public ActionResult UpdateEmployee(Employee employee)
+        {
+            return Json(_employeeRepository.UpdateEmployee(employee));
+        }
     }
 }

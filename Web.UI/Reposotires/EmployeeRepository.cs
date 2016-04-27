@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Script.Serialization;
 using Web.UI.Interfaces;
 using Web.UI.Models;
 
@@ -42,6 +43,18 @@ namespace Web.UI.Reposotires
         public IQueryable<Employee> GetEmployeesByDelflag()
         {
             return db.Employees.Where(e => e.DelFlag == 0);
+        }
+
+        public string UpdateEmployee(Employee employee)
+        {
+            if(employee != null)
+            {
+                employee.DelFlag = 0;
+                db.Entry(employee).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                return "Employee record updated succesfully";
+            }
+            return "Invalid employee record";
         }
 
         protected override void Dispose(bool disposing)
