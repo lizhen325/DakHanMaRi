@@ -35,6 +35,20 @@ namespace Web.UI.Reposotires
             }
         }
 
+        public string DeleteEmployeeById(int id)
+        {
+            Employee employee = db.Employees.Find(id);
+            if(employee != null)
+            {
+                employee.DelFlag = 1;
+                employee.LeaveAt = DateTime.Now;
+                db.Entry(employee).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                return "Selected Employee record deleted sucessfully";
+            }
+            return "Invalid Operation";
+        }
+
         public Employee GetEmployeeById(int id)
         {
             return db.Employees.Where(e => e.Id == id).FirstOrDefault();

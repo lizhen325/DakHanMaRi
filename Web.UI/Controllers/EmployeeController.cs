@@ -43,5 +43,10 @@ namespace Web.UI.Controllers
         {
             return Json(_employeeRepository.UpdateEmployee(employee));
         }
+
+        public ActionResult DeleteEmployeeById(int id)
+        {
+            return Json(_employeeRepository.DeleteEmployeeById(id));
+        }
     }
 }

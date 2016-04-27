@@ -13,5 +13,6 @@ namespace Web.UI.Interfaces
         string AddEmployee(Employee employee);
         Employee GetEmployeeById(int id);
         string UpdateEmployee(Employee employee);
+        string DeleteEmployeeById(int id);
     }
 }
