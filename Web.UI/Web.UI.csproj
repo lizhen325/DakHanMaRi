@@ -196,6 +196,7 @@
     <Content Include="Scripts\Venders\angular.js" />
     <Content Include="Scripts\Venders\bootstrap.js" />
     <Content Include="Scripts\Venders\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\DakHanMaRi.pubxml" />
     <None Include="Scripts\Venders\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\Venders\jquery.validate.js" />
     <Content Include="Scripts\Venders\jquery.validate.min.js" />
@@ -275,6 +276,9 @@
     <EmbeddedResource Include="Migrations\201604201510280_DeleteProfileTable.resx">
       <DependentUpon>201604201510280_DeleteProfileTable.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
