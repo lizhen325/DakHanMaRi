@@ -14,7 +14,7 @@
         });
         
         //dialog
-        $scope.openDialog = function () {
+        $scope.openAddDialog = function () {
             ngDialog.openConfirm({
                 template:
                     "<form align='center' novalidate name='employeeForm' ng-submit='addEmployee(employee)'>" +
