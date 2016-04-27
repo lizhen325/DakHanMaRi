@@ -5,10 +5,6 @@ using Web.UI.Models;
 
 namespace Web.UI.Reposotires
 {
-    public class aa
-    {
-        public string Password { get; set; }
-    }
     public class AdminRepository : Controller, IAdminProfileRepository
     {
         private readonly CMSDBContext db;
