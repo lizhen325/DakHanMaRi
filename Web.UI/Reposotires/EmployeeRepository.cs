@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using System.Web.Script.Serialization;
 using Web.UI.Interfaces;
 using Web.UI.Models;
 
@@ -63,7 +60,13 @@ namespace Web.UI.Reposotires
         {
             if(employee != null)
             {
+                decimal? totalHourPerWeek = 0;
+                if(employee.TotalHourPerWeek > 0)
+                {
+                    totalHourPerWeek = employee.TotalHourPerWeek;
+                }
                 employee.DelFlag = 0;
+                employee.TotalHourPerWeek = employee.TotalHourPerWeek + totalHourPerWeek;
                 db.Entry(employee).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
                 return "Employee record updated succesfully";
