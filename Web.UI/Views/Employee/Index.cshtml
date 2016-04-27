@@ -33,13 +33,14 @@
             </thead>
             <tbody>
                 <tr ng-repeat="employee in employees | filter:searchName">
+                    <input type="hidden" value="{{employee.Id}}" />
                     <td>{{employee.Name}}</td>
                     <td>{{employee.Phone}}</td>
                     <td>{{employee.Birthday | formatDateTime}}</td>
                     <td>{{employee.JoinAt | formatDateTime}}</td>
                     <td>{{employee.SalaryPerHour | currency}}</td>
                     <td>{{employee.TotalHourPerWeek}}</td>
-                    <td><button class="btn btn-primary">Edit</button></td>
+                    <td><button class="btn btn-primary" ng-click="Edit(employee.Id)">Edit</button></td>
                     <td><button class="btn btn-primary">Delete</button></td>
                 </tr>
             </tbody>

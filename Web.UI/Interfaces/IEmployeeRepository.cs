@@ -11,5 +11,6 @@ namespace Web.UI.Interfaces
     {
         IQueryable<Employee> GetEmployeesByDelflag();
         string AddEmployee(Employee employee);
+        Employee GetEmployeeById(int id);
     }
 }

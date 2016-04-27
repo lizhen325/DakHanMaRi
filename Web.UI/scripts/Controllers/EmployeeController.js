@@ -48,8 +48,7 @@
                     "</form>",
                 plain: true,
                 scope: $scope
-            });
-
+            });            
             //add employee
             $scope.addEmployee = function (employee) {
                 $http({
@@ -65,6 +64,17 @@
                 });
             };
         };
+
+        $scope.Edit = function (id) {
+            $http({
+                method: 'GET',
+                url: '/Employee/GetEmployeeById',
+                params: { Id: JSON.stringify(id) },
+            }).then(function (response) {
+                console.log(response);
+            })
+        }
+
     };
 })();
 

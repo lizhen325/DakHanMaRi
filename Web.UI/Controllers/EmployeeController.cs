@@ -33,5 +33,10 @@ namespace Web.UI.Controllers
         {
             return Content(_employeeRepository.AddEmployee(employee));
         }
+
+        public JsonResult GetEmployeeById(int id)
+        {
+            return Json(_employeeRepository.GetEmployeeById(id), JsonRequestBehavior.AllowGet);
+        }
     }
 }

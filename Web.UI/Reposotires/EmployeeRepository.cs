@@ -34,6 +34,11 @@ namespace Web.UI.Reposotires
             }
         }
 
+        public Employee GetEmployeeById(int id)
+        {
+            return db.Employees.Where(e => e.Id == id).FirstOrDefault();
+        }
+
         public IQueryable<Employee> GetEmployeesByDelflag()
         {
             return db.Employees.Where(e => e.DelFlag == 0);
