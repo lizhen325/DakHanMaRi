@@ -233,9 +233,9 @@
     <Compile Include="Migrations\201604201510280_DeleteProfileTable.Designer.cs">
       <DependentUpon>201604201510280_DeleteProfileTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201604280225111_AddTwoColumns.cs" />
-    <Compile Include="Migrations\201604280225111_AddTwoColumns.Designer.cs">
-      <DependentUpon>201604280225111_AddTwoColumns.cs</DependentUpon>
+    <Compile Include="Migrations\201604280259554_ChangeColumnName.cs" />
+    <Compile Include="Migrations\201604280259554_ChangeColumnName.Designer.cs">
+      <DependentUpon>201604280259554_ChangeColumnName.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AdminProfile.cs" />
@@ -280,8 +280,8 @@
     <EmbeddedResource Include="Migrations\201604201510280_DeleteProfileTable.resx">
       <DependentUpon>201604201510280_DeleteProfileTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604280225111_AddTwoColumns.resx">
-      <DependentUpon>201604280225111_AddTwoColumns.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201604280259554_ChangeColumnName.resx">
+      <DependentUpon>201604280259554_ChangeColumnName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -21,7 +21,9 @@ namespace Web.UI.Reposotires
             {
                 employee.DelFlag = 0;
                 employee.JoinAt = DateTime.Now;
+                employee.DailyWorkHours = 0;
                 employee.TotalHourPerWeek = 0;
+                employee.WeeklySalary = 0;
                 db.Employees.Add(employee);
                 db.SaveChanges();
                 return "Employee record added successfully";

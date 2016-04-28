@@ -16,6 +16,6 @@ namespace Web.UI.Models
         public DateTime? LeaveAt { get; set; }
         public int? DelFlag { get; set; }
         public decimal? DailyWorkHours { get; set; }
-        public decimal? WeaklySalary { get; set; }
+        public decimal? WeeklySalary { get; set; }
     }
 }
