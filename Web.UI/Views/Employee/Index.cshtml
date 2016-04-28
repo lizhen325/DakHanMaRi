@@ -20,8 +20,9 @@
                     <input type="search" class="form-control" placeholder="Search By Name" ng-model="searchName" />
                 </div>
                 <div class="form-group">
-                    <select class="form-control" ng-model="selected_workingday" ng-options="workingDay.day for workingDay in workingDays">
+                    <select class="form-control" ng-model="workingday.value">
                         <option value="">Search By Working Day</option>
+                        <option ng-repeat="workingday in workingDays" value="{{workingday.value}}">{{workingday.day}}</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -45,7 +46,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="employee in employees | filter:searchName">
+                <tr ng-repeat="employee in employees | filter:{Name:searchName, WorkingDays:workingday.value}">
                     <input type="hidden" value="{{employee.Id}}" />
                     <td>{{employee.Name}}</td>
                     <td>{{employee.Phone}}</td>
