@@ -14,9 +14,27 @@
 </head>
 <body>
     <div ng-controller="EmployeeController">
-        <div style="padding:10px;">
-            Search By Name <input type="search" ng-model="searchName" />
-            <button class="btn btn-primary" style="float:right;" ng-click="openAddDialog()">Add Employee</button>
+        <div class="container">
+            <div style="padding:10px;" class="form-inline">
+                <div class="form-group">
+                    <input type="search" class="form-control" placeholder="Search By Name" ng-model="searchName" />
+                </div>
+                <div class="form-group">
+                    <select class="form-control">
+                        <option selected>Search By WorkingDay</option>
+                        <option value="1">Monday</option>
+                        <option value="2">Tuesday</option>
+                        <option value="3">Wednesday</option>
+                        <option value="4">Thursday</option>
+                        <option value="5">Friday</option>
+                        <option value="6">Saturday</option>
+                        <option value="7">Sunday</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary" style="float:right;" ng-click="openAddDialog()">Add Employee</button>
+                </div>
+            </div>
         </div>
         <table class="table table-hover">
             <thead>
