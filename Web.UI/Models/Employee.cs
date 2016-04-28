@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Web.UI.Models
@@ -17,5 +18,6 @@ namespace Web.UI.Models
         public int? DelFlag { get; set; }
         public decimal? DailyWorkHours { get; set; }
         public decimal? WeeklySalary { get; set; }
+        public string WorkingDays { get; set; }
     }
 }

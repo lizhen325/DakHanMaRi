@@ -80,7 +80,7 @@
             return year + "-" + month + "-" + day;
         }
         
-        //Edit Employee
+        //Edit dialog
         $scope.Edit = function (id) {
             $http({
                 method: 'GET',
@@ -134,6 +134,7 @@
                     scope: $scope
                 });
 
+                //edit employee
                 $scope.EditEmployee = function (employee) {
                     var employeeUpdate = {
                         "Delflag": 0,
