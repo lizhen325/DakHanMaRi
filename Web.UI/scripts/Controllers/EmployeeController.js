@@ -5,6 +5,15 @@
            .controller('EmployeeController', EmployeeController)
     EmployeeController.$inject = ["$scope", "$http", "ngDialog"];
     function EmployeeController($scope, $http, ngDialog) {
+        $scope.workingDays = [
+            { day: 'Mon',    value: '1' },
+            { day: 'Tues',   value: '2' },
+            { day: 'Weds', value: '3' },
+            { day: 'Thurs',  value: '4' },
+            { day: 'Fri',    value: '5' },
+            { day: 'Sat',  value: '6' },
+            { day: 'Sun',    value: '7' }
+        ];
         //get all employees
         $http({
             method: 'GET',
@@ -12,7 +21,7 @@
         }).then(function (response) {
             $scope.employees = response.data;
         });
-        
+
         //dialog
         $scope.openAddDialog = function () {
             ngDialog.openConfirm({
@@ -26,18 +35,18 @@
                              "<td style='color:red;' ng-show='employeeForm.name.$error.required && employeeForm.name.$touched'>required</td>" +
                          "</tr>" +
                          "<tr>" +
-                             "<td><label for='name'> Phone: </label></td>" +
+                             "<td><label for='phone'> Phone: </label></td>" +
                              "<td><input type='text' name='phone' placeholder='Phone' ng-model='employeeAdd.Phone' required/></td>" +
                              "<td style='color:red;' ng-show='employeeForm.phone.$error.required && employeeForm.phone.$touched'>required</td>" +
                          "</tr>" +
                          "<tr>" +
-                             "<td><label for='name'> BirthDay: </label></td>" +
+                             "<td><label for='birthday'> BirthDay: </label></td>" +
                              "<td><input type='text' name='birthday' placeholder='BirthDay' ng-pattern='/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/' ng-model='employeeAdd.BirthDay' required/></td>" +
                              "<td style='color:red;' ng-show='employeeForm.birthday.$error.pattern && employeeForm.birthday.$touched'><small>YYY-MM-dd</small></td>" +
                              "<td style='color:red;' ng-show='employeeForm.birthday.$error.required && employeeForm.birthday.$touched'>required</td>" +
                          "</tr>" +
                          "<tr>" +
-                             "<td><label for='name'> SalaryPerHour: </label></td>" +
+                             "<td><label for='salaryperhour'> SalaryPerHour: </label></td>" +
                              "<td><input type='text' placeholder='SalaryPerHour' ng-model='employeeAdd.SalaryPerHour'/></td>" +
                          "</tr>" +
                          "<tr>" +
@@ -79,7 +88,7 @@
             }
             return year + "-" + month + "-" + day;
         }
-        
+
         //Edit dialog
         $scope.Edit = function (id) {
             $http({
@@ -87,6 +96,15 @@
                 url: '/Employee/GetEmployeeById',
                 params: { Id: JSON.stringify(id) },
             }).then(function (response) {
+                $scope.selection = [];
+                $scope.toggleSelection = function toggleSelection(val) {
+                    var idx = $scope.selection.indexOf(val);
+                    if (idx > -1) {
+                        $scope.selection.splice(idx, 1);
+                    } else {
+                        $scope.selection.push(val);
+                    }
+                };
                 $scope.employee = response.data;
                 $scope.Birthday = dateFormat(response.data.Birthday);
                 ngDialog.openConfirm({
@@ -122,10 +140,14 @@
                                 "<td><label for='name'> TotalHourPerWeek: </label></td>" +
                                 "<td><input type-'text' ng-model='employee.TotalHourPerWeek'/></td>" +
                              "</tr>" +
+                              "<tr>" +
+                                "<td><label for='workingday'> WorkingDays: </label></td>" +
+                                "<td><samll ng-repeat='workingday in workingDays'><input type='checkbox' value='{{workingday.value}}' ng-checked='selection.indexof(workingday.value) > -1' ng-click='toggleSelection(workingday.value)'/> {{workingday.day}}</samll></td>" +
+                             "</tr>" +
                              "<tr>" +
                               "<td colspan='2'><button type='submit' class='btn btn-primary' ng-disabled='employeeEditForm.$invalid'> Update </button> " +
                                  "<input type='reset' value='reset' class='btn btn-info'/> </td>" +
-                             "</tr>" +                            
+                             "</tr>" +
                              "<input type='hidden' ng-model='employee.JoinAt'/>" +
                              "<input type='hidden' ng-model='employee.id'/>" +
                          "</table>" +
@@ -145,7 +167,8 @@
                         "Id" : id,
                         "Birthday": dateFormat(employee.Birthday),
                         "JoinAt": dateFormat(employee.JoinAt),
-                        "DailyWorkHours":employee.DailyWorkHours
+                        "DailyWorkHours": employee.DailyWorkHours,
+                        "WorkingDays": $scope.selection.toString()
                     };
                     $http({
                         method: 'post',
@@ -178,7 +201,7 @@
                 $http({
                     method: 'post',
                     url: '/Employee/DeleteEmployeeById',
-                    params:{Id:JSON.stringify(id)},
+                    params: { Id: JSON.stringify(id) },
                 }).then(function (response) {
                     if (response.statusText == "OK") {
                         alert(response.data);
