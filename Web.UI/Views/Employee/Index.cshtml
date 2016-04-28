@@ -43,7 +43,7 @@
                     <td>{{employee.SalaryPerHour | currency}}</td>
                     <td>{{employee.TotalHourPerWeek}}</td>
                     <td>{{employee.DailyWorkHours}}</td>
-                    <td>{{employee.WeeklySalary}}</td>
+                    <td>{{employee.WeeklySalary | currency}}</td>
                     <td><button class="btn btn-primary" ng-click="Edit(employee.Id)">Edit</button></td>
                     <td><button class="btn btn-primary" ng-click="Delete(employee.Id)">Delete</button></td>
                 </tr>

@@ -112,7 +112,11 @@
                              "</tr>" +
                              "<tr>" +
                                  "<td><label for='name'> SalaryPerHour: </label></td>" +
-                                 "<td><input type='text' placeholder='SalaryPerHour' ng-model='employee.SalaryPerHour' value='employee.SalaryPerHour'/></td>" +
+                                 "<td><input type='text' placeholder='SalaryPerHour' ng-model='employee.SalaryPerHour'/></td>" +
+                             "</tr>" +
+                             "<tr>" +
+                                 "<td><label for='name'> DailyWorkHours: </label></td>" +
+                                 "<td><input type='text' placeholder='SalaryPerHour' ng-model='employee.DailyWorkHours' /></td>" +
                              "</tr>" +
                               "<tr>" +
                                 "<td><label for='name'> TotalHourPerWeek: </label></td>" +
@@ -132,13 +136,15 @@
 
                 $scope.EditEmployee = function (employee) {
                     var employeeUpdate = {
+                        "Delflag": 0,
                         "Name": employee.Name,
                         "Phone": employee.Phone,
                         "TotalHourPerWeek": employee.TotalHourPerWeek,
                         "SalaryPerHour": employee.SalaryPerHour,
                         "Id" : id,
                         "Birthday": dateFormat(employee.Birthday),
-                        "JoinAt": dateFormat(employee.JoinAt)
+                        "JoinAt": dateFormat(employee.JoinAt),
+                        "DailyWorkHours":employee.DailyWorkHours
                     };
                     $http({
                         method: 'post',

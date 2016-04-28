@@ -61,14 +61,9 @@ namespace Web.UI.Reposotires
         public string UpdateEmployee(Employee employee)
         {
             if(employee != null)
-            {
-                decimal? totalHourPerWeek = 0;
-                if(employee.TotalHourPerWeek > 0)
-                {
-                    totalHourPerWeek = employee.TotalHourPerWeek;
-                }
-                employee.DelFlag = 0;
-                employee.TotalHourPerWeek = employee.TotalHourPerWeek + totalHourPerWeek;
+            {                
+                employee.TotalHourPerWeek = employee.TotalHourPerWeek + employee.DailyWorkHours;
+                employee.WeeklySalary = employee.TotalHourPerWeek * employee.SalaryPerHour;
                 db.Entry(employee).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
                 return "Employee record updated succesfully";
