@@ -218,6 +218,7 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
@@ -227,6 +228,7 @@
     <Compile Include="Interfaces\IAdminProfileRepository.cs" />
     <Compile Include="Interfaces\ICategoryRepository.cs" />
     <Compile Include="Interfaces\IEmployeeRepository.cs" />
+    <Compile Include="Interfaces\IItemsRepository.cs" />
     <Compile Include="Interfaces\IProductRepository.cs" />
     <Compile Include="Migrations\201604201117052_Initial.cs" />
     <Compile Include="Migrations\201604201117052_Initial.Designer.cs">
@@ -240,6 +242,10 @@
     <Compile Include="Migrations\201604201510280_DeleteProfileTable.Designer.cs">
       <DependentUpon>201604201510280_DeleteProfileTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201604291458191_b.cs" />
+    <Compile Include="Migrations\201604291458191_b.Designer.cs">
+      <DependentUpon>201604291458191_b.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AdminProfile.cs" />
     <Compile Include="Models\Category.cs" />
@@ -251,6 +257,7 @@
     <Compile Include="Reposotires\AdminRepository.cs" />
     <Compile Include="Reposotires\CategoryRepository.cs" />
     <Compile Include="Reposotires\EmployeeRepository.cs" />
+    <Compile Include="Reposotires\ItemRepository.cs" />
     <Compile Include="Reposotires\ProductRepository.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -288,6 +295,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604201510280_DeleteProfileTable.resx">
       <DependentUpon>201604201510280_DeleteProfileTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604291458191_b.resx">
+      <DependentUpon>201604291458191_b.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

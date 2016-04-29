@@ -12,8 +12,8 @@ namespace Web.UI.Models
         [Key]
         public int ItemId { get; set; }
         public string ItemName { get; set; }
-        public decimal ItemPrice { get; set; }
-        public int ItemQuality { get; set; }
+        public decimal? ItemPrice { get; set; }
+        public int? ItemQuality { get; set; }
         public int ProductId { get; set; }
 
         [ForeignKey("ProductId")]
