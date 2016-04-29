@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace Web.UI.Controllers
 {
-    public class ProductController : BaseController
+    public class CategoryController : BaseController
     {
         // GET: Product
         public ActionResult Index()

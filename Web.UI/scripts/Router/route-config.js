@@ -11,7 +11,7 @@
                     templateUrl: '/Employee/Index'
                 })
                 .when('/Product', {
-                    templateUrl: '/Product/Index'
+                    templateUrl: '/Category/Index'
                 })
                 .otherwise({
                     redirectTo: '/'

@@ -176,6 +176,8 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Home.css" />
+    <Content Include="Content\Images\Liquor.jpg" />
+    <Content Include="Content\Images\Soft_Drinks.jpg" />
     <Content Include="Content\Login.css" />
     <Content Include="Content\Images\Background.jpg" />
     <Content Include="Content\ngDialog-theme-default.css" />
@@ -186,6 +188,7 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\Controllers\EmployeeController.js" />
     <Content Include="Scripts\Controllers\LoginController.js" />
+    <Content Include="Scripts\Controllers\ProductController.js" />
     <Content Include="Scripts\filters\Date-Filter.js" />
     <Content Include="Scripts\Venders\ngDialog.js" />
     <Content Include="Scripts\Venders\ngDialog.min.js" />
@@ -216,7 +219,7 @@
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
-    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -260,7 +263,7 @@
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Employee\Index.cshtml" />
-    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Category\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
