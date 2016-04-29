@@ -18,7 +18,8 @@ namespace Web.UI
                         "~/Scripts/Venders/ngDialog.js",
                         "~/Scripts/Router/route-config.js",
                         "~/Scripts/filters/Date-Filter.js",
-                        "~/Scripts/Controllers/EmployeeController.js"));
+                        "~/Scripts/Controllers/EmployeeController.js",
+                        "~/Scripts/Controllers/CategoryController.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -33,7 +34,10 @@ namespace Web.UI
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/ngDialog-theme-default.css",
+                      "~/Content/ngDialog.css",
+                      "~/Content/ngDialog.min.css"));
         }
     }
 }

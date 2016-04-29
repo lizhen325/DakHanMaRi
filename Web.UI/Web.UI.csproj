@@ -188,7 +188,7 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\Controllers\EmployeeController.js" />
     <Content Include="Scripts\Controllers\LoginController.js" />
-    <Content Include="Scripts\Controllers\ProductController.js" />
+    <Content Include="Scripts\Controllers\CategoryController.js" />
     <Content Include="Scripts\filters\Date-Filter.js" />
     <Content Include="Scripts\Venders\ngDialog.js" />
     <Content Include="Scripts\Venders\ngDialog.min.js" />
