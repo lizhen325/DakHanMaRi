@@ -66,6 +66,7 @@ namespace Web.UI.App_Start
             kernel.Bind<IEmployeeRepository>().To<EmployeeRepository>();
             kernel.Bind<IAdminProfileRepository>().To<AdminRepository>();
             kernel.Bind<ICategoryRepository>().To<CategoryRepository>();
+            kernel.Bind<IProductRepository>().To<ProductRepository>();
         }        
     }
 }

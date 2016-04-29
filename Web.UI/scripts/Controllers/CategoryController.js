@@ -12,5 +12,15 @@
             console.log(response);
             $scope.productCategories = response.data;
         })
+
+        $scope.getProductByCategoryId = function (categoryId) {
+            $http({
+                method: 'GET',
+                url: '/Product/GetProductsByCategoryId',
+                params: { CategoryId: JSON.stringify(categoryId) }
+            }).then(function (response) {
+                console.log(response);
+            })
+        }
     }
 })();

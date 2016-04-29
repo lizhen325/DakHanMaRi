@@ -220,12 +220,14 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\IAdminProfileRepository.cs" />
     <Compile Include="Interfaces\ICategoryRepository.cs" />
     <Compile Include="Interfaces\IEmployeeRepository.cs" />
+    <Compile Include="Interfaces\IProductRepository.cs" />
     <Compile Include="Migrations\201604201117052_Initial.cs" />
     <Compile Include="Migrations\201604201117052_Initial.Designer.cs">
       <DependentUpon>201604201117052_Initial.cs</DependentUpon>
@@ -249,6 +251,7 @@
     <Compile Include="Reposotires\AdminRepository.cs" />
     <Compile Include="Reposotires\CategoryRepository.cs" />
     <Compile Include="Reposotires\EmployeeRepository.cs" />
+    <Compile Include="Reposotires\ProductRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
