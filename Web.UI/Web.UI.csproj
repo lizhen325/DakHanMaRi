@@ -224,6 +224,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\IAdminProfileRepository.cs" />
+    <Compile Include="Interfaces\ICategoryRepository.cs" />
     <Compile Include="Interfaces\IEmployeeRepository.cs" />
     <Compile Include="Migrations\201604201117052_Initial.cs" />
     <Compile Include="Migrations\201604201117052_Initial.Designer.cs">
@@ -246,6 +247,7 @@
     <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reposotires\AdminRepository.cs" />
+    <Compile Include="Reposotires\CategoryRepository.cs" />
     <Compile Include="Reposotires\EmployeeRepository.cs" />
   </ItemGroup>
   <ItemGroup>
