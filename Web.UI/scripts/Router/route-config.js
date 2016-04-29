@@ -10,6 +10,9 @@
                 .when('/Employee', {
                     templateUrl: '/Employee/Index'
                 })
+                .when('/Product', {
+                    templateUrl: '/Product/Index'
+                })
                 .otherwise({
                     redirectTo: '/'
                 })
