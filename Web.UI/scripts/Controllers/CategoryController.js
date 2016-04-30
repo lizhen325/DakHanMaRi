@@ -77,7 +77,7 @@
                 $scope.item = response.data;
                 ngDialog.openConfirm({
                     template:
-                        "<form align='center' novalidate name='itemEditForm' ng-submit='UpdateItem(item)'>" +
+                        "<form align='center' novalidate name='itemEditForm' ng-submit='UpdateItem(item, product.ProductName)'>" +
                             "<table class='table'>" +
                             "<h2>Edit Item</h2>" +
                                 "<tr>" +
@@ -100,7 +100,7 @@
                                 "<tr>" +
                                     "<td><label for='product'> Product: </label></td>" +
                                     "<td>" +
-                                        "<select ng-model='product.ProductName'>" +
+                                        "<select ng-model='product.ProductName' required>" +
                                             "<option value=''>Select Product Category</option>" +
                                             "<option ng-repeat='product in products' value='{{product.ProductName}}'>{{product.ProductName}}</option>" +
                                         "</select>" +
@@ -118,8 +118,9 @@
             });
         }
 
-        $scope.deleteItem = function (itemId) {
-            console.log(itemId);
+        $scope.UpdateItem = function (item, productName) {
+            console.log(item);
+            console.log(productName);
         }
     }
 })();
