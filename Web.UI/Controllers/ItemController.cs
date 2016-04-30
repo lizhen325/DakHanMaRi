@@ -37,5 +37,10 @@ namespace Web.UI.Controllers
         {
             return Json(_itemRepository.UpdateItem(item, productName));
         }
+
+        public ActionResult DeleteItemByItemId(int itemId)
+        {
+            return Json(_itemRepository.DeleteItemByItemId(itemId));
+        }
     }
 }

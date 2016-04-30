@@ -19,6 +19,18 @@ namespace Web.UI.Reposotires
             this.db = db;
         }
 
+        public string DeleteItemByItemId(int itemId)
+        {
+            var item = db.Items.Find(itemId);
+            if(item != null)
+            {
+                db.Entry(item).State = EntityState.Deleted;
+                db.SaveChanges();
+                return "Selected Employee record deleted sucessfully";
+            }
+            return "Invalid Operation";
+        }
+
         public Item GetItemByItemId(int itemId)
         {
             return db.Items.Where(i => i.ItemId == itemId).FirstOrDefault();

@@ -130,5 +130,31 @@
                 }
             })
         }
+
+        $scope.deleteItem = function (itemId) {
+            ngDialog.openConfirm({
+                template:
+                    '<div>' +
+                    '<p>Are you sure you want to delete selected conversation(s) ?</p>' +
+                      '<button type="button" class="btn btn-primary" ng-click="closeThisDialog()">No</button> &nbsp;' +
+                      '<button type="button" class="btn btn-primary" ng-click="confirm()">Yes' +
+                    '</button>' +
+                    '</div>',
+                plain: true,
+                className: 'ngdialog-theme-default'
+            }).then(function () {
+                $http({
+                    method: 'post',
+                    url: '/Item/DeleteItemByItemId',
+                    params: { itemId: JSON.stringify(itemId) }
+                }).then(function (response) {
+                    if (response.statusText == "OK") {
+                        alert(response.data);
+                        location.reload();
+                    }
+                })
+            });
+           
+        };
     }
 })();
