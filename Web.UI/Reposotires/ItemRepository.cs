@@ -19,6 +19,19 @@ namespace Web.UI.Reposotires
             this.db = db;
         }
 
+        public string AddItem(Item item, string productName)
+        {
+            if(item != null && !string.IsNullOrEmpty(productName))
+            {
+                var productId = db.Products.Where(p => p.ProductName == productName).FirstOrDefault().ProductId;
+                item.ProductId = productId;
+                db.Items.Add(item);
+                db.SaveChanges();
+                return "Item record added successfully";
+            }
+            return "Invalid Item record";
+        }
+
         public string DeleteItemByItemId(int itemId)
         {
             var item = db.Items.Find(itemId);

@@ -13,5 +13,6 @@ namespace Web.UI.Interfaces
         Item GetItemByItemId(int itemId);
         string UpdateItem(Item item, string productName);
         string DeleteItemByItemId(int itemId);
+        string AddItem(Item item, string productName);
     }
 }
