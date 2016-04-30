@@ -17,6 +17,11 @@ namespace Web.UI.Reposotires
             this.db = db;
         }
 
+        public Item GetItemByItemId(int itemId)
+        {
+            return db.Items.Where(i => i.ItemId == itemId).FirstOrDefault();
+        }
+
         public IQueryable<Item> GetItemsByProductId(int productId)
         {
             return db.Items.Where(i => i.ProductId == productId);

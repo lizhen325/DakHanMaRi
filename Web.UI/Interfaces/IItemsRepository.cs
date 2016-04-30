@@ -10,5 +10,6 @@ namespace Web.UI.Interfaces
     public interface IItemsRepository
     {
         IQueryable<Item> GetItemsByProductId(int productId);
+        Item GetItemByItemId(int itemId);
     }
 }

@@ -26,5 +26,10 @@ namespace Web.UI.Controllers
         {
             return Json(_itemRepository.GetItemsByProductId(productId), JsonRequestBehavior.AllowGet);
         }
+
+        public ActionResult GetItemByItemId(int itemId)
+        {
+            return Json(_itemRepository.GetItemByItemId(itemId), JsonRequestBehavior.AllowGet);
+        }
     }
 }
