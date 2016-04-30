@@ -12,6 +12,14 @@
             $scope.productCategories = response.data;
         })
 
+        $scope.editProductCategory = function (productCategoryId) {
+            console.log(productCategoryId);
+        };
+
+        $scope.deleteProductCategory = function (productCategoryId) {
+            console.log(productCategoryId);
+        };
+
         $scope.visible = false;
         $scope.getItemsByProductId = function(productId){
             $http({
@@ -24,7 +32,7 @@
             });
         }
 
-        $scope.products = null;
+        //$scope.products = null;
         $scope.getProductByCategoryId = function (categoryId) {
             $http({
                 method: 'GET',
