@@ -11,5 +11,6 @@ namespace Web.UI.Interfaces
     {
         IQueryable<Item> GetItemsByProductId(int productId);
         Item GetItemByItemId(int itemId);
+        string UpdateItem(Item item, string productName);
     }
 }

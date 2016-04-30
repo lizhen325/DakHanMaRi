@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Web.UI.Interfaces;
@@ -25,6 +27,19 @@ namespace Web.UI.Reposotires
         public IQueryable<Item> GetItemsByProductId(int productId)
         {
             return db.Items.Where(i => i.ProductId == productId);
+        }
+
+        public string UpdateItem(Item item, string productName)
+        {
+            if(!string.IsNullOrEmpty(productName) && item != null)
+            {
+                var productId =  db.Products.Where(p => p.ProductName == productName).FirstOrDefault().ProductId;
+                item.ProductId = productId;
+                db.Entry(item).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                return "Item record updated succesfully";
+            }
+            return "Invalid employee record";
         }
 
         protected override void Dispose(bool disposing)

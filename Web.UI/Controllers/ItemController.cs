@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Web.UI.Interfaces;
+using Web.UI.Models;
 
 namespace Web.UI.Controllers
 {
@@ -30,6 +31,11 @@ namespace Web.UI.Controllers
         public ActionResult GetItemByItemId(int itemId)
         {
             return Json(_itemRepository.GetItemByItemId(itemId), JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult UpdateItem(Item item, string productName)
+        {
+            return Json(_itemRepository.UpdateItem(item, productName));
         }
     }
 }

@@ -119,8 +119,16 @@
         }
 
         $scope.UpdateItem = function (item, productName) {
-            console.log(item);
-            console.log(productName);
+            $http({
+                method: 'post',
+                url: '/Item/UpdateItem',
+                data: {item: item, productName: productName }
+            }).then(function (response) {
+                if (response.statusText == "OK") {
+                    alert(response.data);
+                    location.reload();
+                }
+            })
         }
     }
 })();
